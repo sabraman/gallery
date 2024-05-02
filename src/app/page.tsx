@@ -1,7 +1,26 @@
+import { url } from "inspector";
 import Link from "next/link";
+
+const mockUrls = [
+  "https://utfs.io/f/ebaf1de1-2f72-4427-aa16-62cea90550e0-spo4bu.jpg",
+  "https://utfs.io/f/1338d21d-1fc3-4184-a972-8c1cfa0497ec-k00a1n.O.G.jpg"
+];
+
+const mockImages = mockUrls.map((url, index) => ({
+  id: index + 1,
+  url,
+}))
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">Hello (galler in progress)</main>
+    <main className="">
+      <div className="flex flex-wrap gap-4">
+        {[...mockImages, ...mockImages, ...mockImages, ...mockImages].map((image) => (
+          <div key={image.id} className="w-48">
+            <img src={image.url} />
+          </div>
+        ))}
+      </div>
+    </main>
   );
 }
