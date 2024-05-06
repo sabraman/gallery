@@ -12,6 +12,8 @@ import { ourFileRouter } from "./api/uploadthing/core";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: 'swap',
+  adjustFontFallback: false
 });
 
 export const metadata = {
